@@ -6,7 +6,6 @@ import 'primeicons/primeicons.css';
 import Aura from '@primevue/themes/aura';
 import { definePreset } from '@primevue/themes';
 
-
 const MyPreset = definePreset(Aura, {
   semantic: {
     primary: {
