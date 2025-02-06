@@ -7,6 +7,15 @@ app.use(express.json());
 app.use(cors());
 const axios = require('axios');
 
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, '../dist')));
+
+
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../dist', 'index.html'));
+});
+
 app.post('/generate-task', async (request, response) => {
   const { taskType, taskLevel } = request.body;
   if (!taskType || !taskLevel) {

@@ -35,7 +35,7 @@ const handleGenerateTask = async () => {
   try {
     state.isLoading = true;
     state.error = '';
-    const response = await axios.post(`http://localhost:5002/generate-task`, {
+    const response = await axios.post(`https://learn-vue-app.onrender.com/generate-task`, {
       taskType: selectedTaskType.value,
       taskLevel: selectedTaskLevel.value
     });
