@@ -62,7 +62,7 @@ const handleGenerateTask = async () => {
   
   <section class="py-8">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="h-screen bg-ai">
+      <div class="h-screen bg-ai bg-contain bg-no-repeat bg-center bg-[url(/images/bg-ai.png)]">
         <Card class="p-6">
           <template #content>
             <Form @submit="handleGenerateTask" class="grid grid-cols-1 md:grid-cols-2 gap-3">
