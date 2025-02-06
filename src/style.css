@@ -2,3 +2,10 @@
 @import "tailwindcss/components";
 @import "./assets/primevue/tailwind.css";
 @import "tailwindcss/utilities";
+
+.bg-ai {
+  background-image: url(/src/assets/images/bg-ai.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

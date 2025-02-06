@@ -62,52 +62,54 @@ const handleGenerateTask = async () => {
   
   <section class="py-8">
     <div class="max-w-4xl mx-auto px-4">
-      <Card class="p-6">
-        <template #content>
-          <Form @submit="handleGenerateTask" class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div>
-              <label for="taskType" class="block text-sm font-medium text-gray-700 mb-2">Select Task Type</label>
-              <Select
-                v-model="selectedTaskType"
-                :options="taskTypes"
-                option-label="text"
-                option-value="name"
-                class="w-full"
-                id="taskType"
-                placeholder="Select Task Type"
-              />
-            </div>
+      <div class="h-screen bg-ai">
+        <Card class="p-6">
+          <template #content>
+            <Form @submit="handleGenerateTask" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div>
+                <label for="taskType" class="block text-sm font-medium text-gray-700 mb-2">Select Task Type</label>
+                <Select
+                  v-model="selectedTaskType"
+                  :options="taskTypes"
+                  option-label="text"
+                  option-value="name"
+                  class="w-full"
+                  id="taskType"
+                  placeholder="Select Task Type"
+                />
+              </div>
 
-            <div>
-              <label for="taskLevel" class="block text-sm font-medium text-gray-700 mb-2">Select Task Level</label>
-              <Select
-                v-model="selectedTaskLevel"
-                :options="taskLevels"
-                option-label="text"
-                option-value="name"
-                class="w-full"
-                id="taskLevel"
-                placeholder="Select Task Level"
-              />
-            </div>
+              <div>
+                <label for="taskLevel" class="block text-sm font-medium text-gray-700 mb-2">Select Task Level</label>
+                <Select
+                  v-model="selectedTaskLevel"
+                  :options="taskLevels"
+                  option-label="text"
+                  option-value="name"
+                  class="w-full"
+                  id="taskLevel"
+                  placeholder="Select Task Level"
+                />
+              </div>
 
-            <Button
-              type="submit"
-              :label="state.isLoading ? 'Generating...' : 'Generate'"
-              class="w-full py-2 px-4 bg-green-700 text-white rounded-md disabled:bg-gray-400 md:col-span-2"
-              :disabled="state.isLoading"
-            />
-          </Form>
-      </template>
-      </Card>
-      
-      <Card class="shadow-lg rounded-lg p-6" v-if="state.task">
-        <template #content>
-          <Output :task="state.task" />
+              <Button
+                type="submit"
+                :label="state.isLoading ? 'Generating...' : 'Generate'"
+                class="w-full py-2 px-4 bg-green-700 text-white rounded-md disabled:bg-gray-400 md:col-span-2"
+                :disabled="state.isLoading"
+              />
+            </Form>
         </template>
-      </Card>
-      
-      <div v-if="state.error" class="mt-4 text-red-500">{{ state.error }}</div> 
+        </Card>
+        
+        <Card class="shadow-lg rounded-lg p-6" v-if="state.task">
+          <template #content>
+            <Output :task="state.task" />
+          </template>
+        </Card>
+        
+        <div v-if="state.error" class="mt-4 text-red-500">{{ state.error }}</div> 
+     </div>
     </div>
   </section>
 </template>
