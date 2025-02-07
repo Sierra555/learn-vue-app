@@ -1,8 +1,23 @@
 <script setup>
-import HomeView from '@/views/HomeView.vue'
+import { defineAsyncComponent } from "vue";
+import FadeLoader from "vue-spinner/src/FadeLoader.vue";
 
+const AsyncHomeView = defineAsyncComponent(() =>
+	import("@/views/HomeView.vue")
+);
 </script>
 
 <template>
-  <HomeView />
+	<Suspense>
+		<template #fallback>
+			<div
+				class="flex items-center justify-center h-screen"
+			>
+				<FadeLoader />
+			</div>
+		</template>
+		<template #default>
+			<AsyncHomeView />
+		</template>
+	</Suspense>
 </template>
