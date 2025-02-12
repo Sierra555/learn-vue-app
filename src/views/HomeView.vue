@@ -84,7 +84,7 @@ const handleGenerateTask = async () => {
 	<section class="py-8">
 		<div class="max-w-4xl mx-auto px-4">
 			<div
-				class="h-screen bg-ai bg-contain bg-no-repeat bg-center bg-[url(/images/bg-ai.png)]"
+				class="h-screen bg-ai bg-contain bg-no-repeat bg-center bg-[url(/images/bg-ai.webp)]"
 			>
 				<Card class="p-6">
 					<template #content>
