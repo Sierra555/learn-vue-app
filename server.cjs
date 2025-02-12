@@ -10,7 +10,6 @@ app.use(compression());
 const axios = require("axios");
 
 const path = require("path");
-const { default: compression } = require("compression");
 
 app.use(express.static(path.join(__dirname, "./dist")));
 
